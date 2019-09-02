@@ -1,0 +1,13 @@
+--- 
+title: "This is a Test"
+author: "Mirai Solutions"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    split_by: section
+---
+
+# Introduction
+
+Blabla

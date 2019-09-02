@@ -11,7 +11,7 @@ functionality to render individual reports and a website.
 ### Render a prametrized report
 
 ```r
-browseURL(render_report("line-report", params = list(line = "line XYZ")))
+browseURL(render_report("ith-report", params = list(i = "iteration XYZ")))
 ```
 
 ### Render the website
