@@ -5,7 +5,7 @@ after_success:
 - pwd
 - ls -R
 - R CMD INSTALL $PKG_TARBALL
-- Rscript -e "PoCbookdownPkg::render_site(output_dir = '_site')"
+- R -e "PoCbookdownPkg::render_site(output_dir = '_site')"
 - pwd
 - ls -R
 
