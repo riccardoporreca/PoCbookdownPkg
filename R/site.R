@@ -20,5 +20,5 @@ render_site <- function(..., output_dir = '_site') {
   #restore_dir <- setwd(input_dir) # returns the wd before the call
   #on.exit(setwd(restore_dir))
   message(setwd(input_dir))
-  bookdown::render_book(".", output_dir = "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site", ...)
+  bookdown::render_book(".", output_dir = output_dir, ...)
 }
