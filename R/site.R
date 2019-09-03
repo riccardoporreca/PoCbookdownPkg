@@ -8,7 +8,7 @@
 #' @export
 render_site <- function(..., output_dir = '_site') {
   # absolute path of output_dir (which must exist)
-  messsge(getwd())
+  message(getwd())
   message(dir.create("_site", recursive = TRUE, showWarnings = FALSE))
   #output_dir <- normalizePath(output_dir)
   message(system.file('site', package = 'PoCbookdownPkg'))
