@@ -4,7 +4,8 @@ before_cache: Rscript -e 'remotes::install_cran("bookdown")'
 
 script: Rscript -e 'cat("nothing")' # instead of the default R CMD check
 after_success:
-- Rscript -e "render_site()"
+- Rscript -e "remotes::install_github('fvitalini/PoCbookdownPkg')"
+- Rscript -e "PoCbookdownPkg::render_site()"
 
 deploy:
   provider: pages
