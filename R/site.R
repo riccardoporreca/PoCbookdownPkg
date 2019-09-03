@@ -10,6 +10,9 @@ render_site <- function(..., output_dir = '_site') {
   # absolute path of output_dir (which must exist)
   dir.create("_site", recursive = TRUE, showWarnings = FALSE)
   #output_dir <- normalizePath(output_dir)
+  message(system.file('site', package = 'PoCbookdownPkg'))
+  dir.exists(system.file('site', package = 'PoCbookdownPkg'))
+  list.files(system.file('site', package = 'PoCbookdownPkg'))
   #input_dir <- system.file('site', package = 'PoCbookdownPkg')
   #restore_dir <- setwd(input_dir) # returns the wd before the call
   #on.exit(setwd(restore_dir))
