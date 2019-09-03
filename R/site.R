@@ -22,6 +22,6 @@ render_site <- function(..., output_dir = '_site') {
   message(setwd(input_dir))
   identical(output_dir, "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site")
   xxxx <- output_dir
-  trace(bookdown::render_book, quote(message("output_dir")))
-  bookdown::render_book(".", output_dir = force(xxxx))
+  # trace(bookdown::render_book, quote(message("output_dir")))
+  bookdown::render_book(".", output_dir = force(xxxx), clean_envir = FALSE)
 }
