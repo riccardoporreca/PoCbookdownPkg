@@ -6,8 +6,10 @@ script: Rscript -e 'cat("nothing")' # instead of the default R CMD check
 after_success:
 - Rscript -e "getwd()"
 - Rscript -e "list.files()"
-- R CMD INSTALL $PKG_TARBALL
+- Rscript -e "remotes::install_github('fvitalini/PoCbookdownPkg')"
 - Rscript -e "PoCbookdownPkg::render_site()"
+- Rscript -e "getwd()"
+- Rscript -e "list.files()"
 
 deploy:
   provider: pages
