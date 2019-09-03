@@ -10,7 +10,7 @@ render_site <- function(..., output_dir = '_site') {
   # absolute path of output_dir (which must exist)
   message(getwd())
   message(output_dir)
-  message(dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)))
+  message(dir.create(output_dir, recursive = TRUE, showWarnings = FALSE))
   output_dir <- normalizePath(output_dir)
   message(output_dir)
   message(system.file('site', package = 'PoCbookdownPkg'))
@@ -19,6 +19,6 @@ render_site <- function(..., output_dir = '_site') {
   input_dir <- system.file('site', package = 'PoCbookdownPkg')
   #restore_dir <- setwd(input_dir) # returns the wd before the call
   #on.exit(setwd(restore_dir))
-  setwd(input_dir)
+  message(setwd(input_dir))
   bookdown::render_book(".", output_dir = "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site", ...)
 }
