@@ -9,8 +9,10 @@
 render_site <- function(..., output_dir = '_site') {
   # absolute path of output_dir (which must exist)
   message(getwd())
-  message(dir.create("_site", recursive = TRUE, showWarnings = FALSE))
-  #output_dir <- normalizePath(output_dir)
+  message(output_dir)
+  output_dirmessage(dir.create(output_dir, recursive = TRUE, showWarnings = FALSE))
+  output_dir <- normalizePath(output_dir)
+  message(output_dir)
   message(system.file('site', package = 'PoCbookdownPkg'))
   message(dir.exists(system.file('site', package = 'PoCbookdownPkg')))
   toString(list.files(system.file('site', package = 'PoCbookdownPkg', full.names = TRUE)))
