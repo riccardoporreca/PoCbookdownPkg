@@ -14,5 +14,5 @@ render_site <- function(..., output_dir = '_site') {
   #restore_dir <- setwd(input_dir) # returns the wd before the call
   #on.exit(setwd(restore_dir))
   setwd("inst/site)
-  bookdown::render_book(".", output_dir = output_dir, ...)
+  bookdown::render_book(".", output_dir = "../../_site", ...)
 }
