@@ -12,10 +12,10 @@ render_site <- function(..., output_dir = '_site') {
   #output_dir <- normalizePath(output_dir)
   message(system.file('site', package = 'PoCbookdownPkg'))
   message(dir.exists(system.file('site', package = 'PoCbookdownPkg')))
-  toString(list.files(system.file('site', package = 'PoCbookdownPkg')))
+  toString(list.files(system.file('site', package = 'PoCbookdownPkg', full.names = TRUE)))
   #input_dir <- system.file('site', package = 'PoCbookdownPkg')
   #restore_dir <- setwd(input_dir) # returns the wd before the call
   #on.exit(setwd(restore_dir))
-  setwd("inst/site")
-  bookdown::render_book(".", output_dir = "../../_site", ...)
+  setwd("/home/travis/R/Library/PoCbookdownPkg")
+  bookdown::render_book(".", output_dir = "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site", ...)
 }
