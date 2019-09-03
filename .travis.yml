@@ -9,8 +9,7 @@ after_success:
 - Rscript -e "remotes::install_github('fvitalini/PoCbookdownPkg')"
 - Rscript -e "PoCbookdownPkg::render_site(output_dir = '_site')"
 - Rscript -e "getwd()"
-- Rscript -e "list.files()"
-- Rscript -e "list.files('./_site')"
+- Rscript -e "list.files(recursive = TRUE)"
 
 deploy:
   provider: pages
