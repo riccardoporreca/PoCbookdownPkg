@@ -6,7 +6,7 @@ SSSS
 for (i in sprintf("%d (iteration)", 1:10)) {
   params <- list(line = line)
   cat(knitr::knit_child(
-    PoCbookdownPkgs::report_path("ith-report"),
+    PoCbookdownPkg::report_path("ith-report"),
     quiet = TRUE
   ))
 }
