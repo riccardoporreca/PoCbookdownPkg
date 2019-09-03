@@ -24,4 +24,4 @@ browseURL(render_site())
 ## Notes about naming and design
 
 * The naming `site` and `_site` is alligned with `rmarkdown::render_site()`
-* `site.R` and `report.R` will contain all relevant site- and report-related utilities.
+* `site.R` and `report.R` contain all relevant site- and report-related utilities.
