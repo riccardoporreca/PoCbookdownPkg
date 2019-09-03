@@ -5,8 +5,6 @@
 #' @param output_dir string indicating directory where to render html files for website. Default is "_site".
 #' @param ... additional arguments to be passed to bookdown::render_book .
 #'
-NULL
-
 #' @export
 render_site <- function(..., output_dir = '_site') {
   # absolute path of output_dir (which must exist)
@@ -25,5 +23,5 @@ render_site <- function(..., output_dir = '_site') {
   identical(output_dir, "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site")
   xxxx <- output_dir
   # trace(bookdown::render_book, quote(message("output_dir")))
-  bookdown::render_book(".", output_dir = force(xxxx), clean_envir = TRUE)
+  bookdown:::render_book(".", output_dir = force(xxxx), clean_envir = TRUE)
 }
