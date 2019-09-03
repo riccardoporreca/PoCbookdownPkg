@@ -22,5 +22,5 @@ render_site <- function(..., output_dir = '_site') {
   message(setwd(input_dir))
   identical(output_dir, "/home/travis/build/riccardoporreca/PoCbookdownPkg/_site")
   xxxx <- output_dir
-  bookdown::render_book(".", output_dir = xxxx, ...)
+  bookdown::render_book(".", output_dir = xxxx)
 }
