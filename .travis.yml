@@ -4,13 +4,12 @@ before_cache: Rscript -e 'remotes::install_cran("bookdown")'
 
 script: Rscript -e 'cat("nothing")' # instead of the default R CMD check
 after_success:
-- Rscript -e "getwd()"
-- Rscript -e "list.files()"
-- Rscript -e "remotes::install_github('fvitalini/PoCbookdownPkg')"
+- pwd
+- ls -R
+- R CMD INSTALL $PKG_TARBALL
 - Rscript -e "PoCbookdownPkg::render_site(output_dir = '_site')"
-- Rscript -e "getwd()"
-- Rscript -e "list.files()"
-- Rscript -e "list.files(recursive = TRUE)"
+- pwd
+- ls -R
 
 deploy:
   provider: pages
