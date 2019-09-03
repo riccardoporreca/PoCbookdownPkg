@@ -4,6 +4,7 @@ cache: packages
 after_success:
 - pwd
 - ls -R
+- ls -R /home/travis/R/Library/PoCbookdownPkg
 - R CMD INSTALL $PKG_TARBALL
 - R -e "PoCbookdownPkg::render_site(output_dir = '_site')"
 - pwd
