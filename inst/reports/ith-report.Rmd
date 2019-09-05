@@ -9,4 +9,8 @@ params:
 
 Results for iteration `r params$i`
 
+```{r}
+hist(data$hour[data$line >= params$i])
+```
+
 
