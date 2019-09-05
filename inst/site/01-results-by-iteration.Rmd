@@ -3,6 +3,7 @@
 SSSS
 
 ```{r, echo=FALSE, results='asis'}
+data <- rbind(readRDS("test.rds"), readRDS("test2.rds"))
 for (i in sprintf("%d (iteration)", 1:10)) {
   params <- list(line = line)
   cat(knitr::knit_child(
