@@ -14,9 +14,31 @@ r:
 - release
 - oldrel
 
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: r
+cache: packages
+
+os:
+- linux
+- osx
+
+# Vanilla macOS machine: remove preinstalled homebrew installation
+disable_homebrew: true
+
+r:
+- release
+- oldrel
+
+script:
+  - echo skip
+
 after_success:
   - >-
     if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
-      echo "Hello conditional after_success"
+      echo Code coverage...
+    else
+      echo Skip code coverage
     fi
+
 warnings_are_errors: true
