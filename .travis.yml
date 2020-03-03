@@ -1,19 +1,22 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
 language: r
 cache: packages
 
-before_deploy:
-- pwd
-- ls -R
-- R CMD INSTALL $PKG_TARBALL
-- ls -R /home/travis/R/Library/PoCbookdownPkg
-- R -e "PoCbookdownPkg::render_site(output_dir = '_site')"
-- pwd
-- ls -R
+os:
+- linux
+- osx
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_PAT  # Set in the settings page of your repository, as a secure variable
-  local_dir: _site
-  on:
-    branch: master
+# Vanilla macOS machine: remove preinstalled homebrew installation
+disable_homebrew: true
+
+r:
+- release
+- oldrel
+
+after_success:
+  - >-
+    if [ "$TRAVIS_OS_NAME" = "linux" ] && [ "$TRAVIS_R_VERSION_STRING" = "release" ]; then
+      echo "Hello conditional after_success"
+    fi
+warnings_are_errors: true
